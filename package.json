@@ -1,0 +1,24 @@
+{
+  "name": "gitlab-polybar",
+  "version": "0.9.0",
+  "description": "Gitlab status plugin for polybar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gitlab",
+    "polybar"
+  ],
+  "author": "Alex D'Andrea <alex@dandrea.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/got": "^9.6.7",
+    "@types/yargs": "^13.0.2",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "got": "^9.6.0",
+    "yargs": "^14.0.0"
+  }
+}
