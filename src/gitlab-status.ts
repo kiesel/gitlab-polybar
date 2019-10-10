@@ -4,10 +4,17 @@ import yargs = require('yargs');
 async function render(argv) {
   const result = await new GitlabAPI({ host: `${argv.url}/api/v4`, privateToken: argv.apikey }).fetch(argv);
 
-  console.log(result);
-  console.log('%d assigned to you', result.mrForMe.length);
-  console.log('%d opened by you', result.mrByMe.length);
-  console.log('%d assigned by yourself', result.mrAllMe.length);
+  if (result.mrForMe.length > 0) {
+    console.log('%d ', result.mrForMe.length);
+  }
+
+  if (result.mrByMe.length > 0) {
+    console.log('%d ', result.mrByMe.length);
+  }
+
+  if (result.mrAllMe.length > 0) {
+    console.log('%d ', result.mrAllMe.length);
+  }
 }
 
 yargs.usage('$0 <command> [args]').command(

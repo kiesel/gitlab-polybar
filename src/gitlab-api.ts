@@ -114,7 +114,6 @@ export class GitlabAPI {
 
       for (const idx in result.mrByMe) {
         const mr = result.mrByMe[idx];
-        console.log(mr);
 
         if (mr.assignee.id === mr.author.id) {
           if (-1 === result.mrAllMe.findIndex(e => e.id === mr.id)) {
