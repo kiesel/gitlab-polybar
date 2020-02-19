@@ -12,16 +12,16 @@ async function render(argv) {
 
   let output = '';
   output += util.format(
-    '%d/%d  | %d/%d  | %d/%d ',
-    result.mrForMe.length,
+    '%d/%d  | %d/%d  | %d/%d  MR/WIP',
     result.mrForMe.filter(value => !value.work_in_progress).length,
-    result.mrByMe.length,
+    result.mrForMe.filter(value => value.work_in_progress).length,
     result.mrByMe.filter(value => !value.work_in_progress).length,
-    result.mrAllMe.length,
+    result.mrByMe.filter(value => value.work_in_progress).length,
+    result.mrAllMe.filter(value => !value.work_in_progress).length,
     result.mrAllMe.filter(value => value.work_in_progress).length,
   );
 
-  console.log(output.trimRight());
+  console.log(output);
 }
 
 yargs.usage('$0 <command> [args]').command(
